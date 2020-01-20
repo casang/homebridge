@@ -1,0 +1,198 @@
+{
+    "bridge": {
+        "name": "Homebridge2",
+        "username": "CC:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "031-45-154"
+    },
+    "platforms": [
+        {
+            "platform": "config",
+            "name": "Config",
+            "port": 8080,
+            "sudo": false
+        }
+    ],
+    "accessories": [
+        {
+            "accessory": "HttpAdvancedAccessory",
+            "service": "Lightbulb",
+            "name": "Geral",
+            "forceRefreshDelay": 1,
+            "optionCharacteristic": [
+                "Brightness"
+            ],
+            "urls": {
+                "getOn": {
+                    "url": "http://localhost:8088/DS0"
+                },
+                "getBrightness": {
+                    "url": "http://localhost:8088/DI0"
+                },
+                "setOn": {
+                    "url": "http://localhost:8088/DS0=0{value}",
+                    "mappers" : [
+                        { 
+                            "type": "static", 
+                            "parameters": { "mapping": { "true": "1", "false": "0"} } 
+                        }
+                    ]   
+                },
+                "setBrightness": {
+                    "url": "http://localhost:8088/DI0=${value < 10 ? '0' + value.toString() : value.toString()}"
+                }
+            }
+        },
+        {
+            "accessory": "HttpAdvancedAccessory",
+            "service": "Lightbulb",
+            "name": "Luz 1",
+            "forceRefreshDelay": 1,
+            "optionCharacteristic": [
+                "Brightness"
+            ],
+            "urls": {
+                "getOn": {
+                    "url": "http://localhost:8088/DS1"
+                },
+                "getBrightness": {
+                    "url": "http://localhost:8088/DI1"
+                },
+                "setOn": {
+                    "url": "http://localhost:8088/DS1=0{value}",
+                    "mappers" : [
+                        { 
+                            "type": "static", 
+                            "parameters": { "mapping": { "true": "1", "false": "0"} } 
+                        }
+                    ]   
+                },
+                "setBrightness": {
+                    "url": "http://localhost:8088/DI1=${value < 10 ? '0' + value.toString() : value.toString()}"
+                }
+            }
+        },
+        {
+            "accessory": "HttpAdvancedAccessory",
+            "service": "Lightbulb",
+            "name": "Luz 2",
+            "forceRefreshDelay": 1,
+            "debug": false,
+            "optionCharacteristic": [
+                "Brightness"
+            ],
+            "urls": {
+                "getOn": {
+                    "url": "http://localhost:8088/DS2"
+                },
+                "getBrightness": {
+                    "url": "http://localhost:8088/DI2"
+                },
+                "setOn": {
+                    "url": "http://localhost:8088/DS2=0{value}",
+                    "mappers" : [
+                        { 
+                            "type": "static", 
+                            "parameters": { "mapping": { "true": "1", "false": "0"} } 
+                        }
+                    ]   
+                },
+                "setBrightness": {
+                    "url": "http://localhost:8088/DI2=${value < 10 ? '0' + value.toString() : value.toString()}"
+                }
+            }
+        },
+        {
+            "accessory": "HttpAdvancedAccessory",
+            "service": "Lightbulb",
+            "name": "Luz 3",
+            "forceRefreshDelay": 1,
+            "optionCharacteristic": [
+                "Brightness"
+            ],
+            "urls": {
+                "getOn": {
+                    "url": "http://localhost:8088/DS3"
+                },
+                "getBrightness": {
+                    "url": "http://localhost:8088/DI3"
+                },
+                "setOn": {
+                    "url": "http://localhost:8088/DS3=0{value}",
+                    "mappers" : [
+                        { 
+                            "type": "static", 
+                            "parameters": { "mapping": { "true": "1", "false": "0"} } 
+                        }
+                    ]   
+                },
+                "setBrightness": {
+                    "url": "http://localhost:8088/DI3=${value < 10 ? '0' + value.toString() : value.toString()}"
+                }
+            }
+        },
+        {
+            "accessory": "HttpAdvancedAccessory",
+            "service": "Lightbulb",
+            "name": "Luz 4",
+            "forceRefreshDelay": 1,
+            "optionCharacteristic": [
+                "Brightness"
+            ],
+            "urls": {
+                "getOn": {
+                    "url": "http://localhost:8088/DS4"
+                },
+                "getBrightness": {
+                    "url": "http://localhost:8088/DI4"
+                },
+                "setOn": {
+                    "url": "http://localhost:8088/DS4=0{value}",
+                    "mappers" : [
+                        { 
+                            "type": "static", 
+                            "parameters": { "mapping": { "true": "1", "false": "0"} } 
+                        }
+                    ]   
+                },
+                "setBrightness": {
+                    "url": "http://localhost:8088/DI4=${value < 10 ? '0' + value.toString() : value.toString()}"
+                }
+            }
+        },
+        {
+            "accessory": "HttpAdvancedAccessory",
+            "service": "Lightbulb",
+            "name": "Luz 5",
+            "forceRefreshDelay": 1,
+            "username": "admin",
+            "password": "admin",
+            "debug": false,
+            "http_method": "GET",
+            "optionCharacteristic": [
+                "Brightness"
+            ],
+            "urls": {
+                "getOn": {
+                    "url": "http://localhost:8088/DS5"
+                },
+                "getBrightness": {
+                    "url": "http://localhost:8088/DI5"
+                },
+                "setOn": {
+                    "url": "http://localhost:8088/DS5=0{value}",
+                    "mappers" : [
+                        { 
+                            "type": "static", 
+                            "parameters": { "mapping": { "true": "1", "false": "0"} } 
+                        }
+                    ]   
+                },
+                "setBrightness": {
+                    "url": "http://localhost:8088/DI5=${value < 10 ? '0' + value.toString() : value.toString()}"
+                }
+            }
+        }
+    ]
+}
+

@@ -1,0 +1,1 @@
+launchctl unload ~/Library/LaunchAgents/com.homebridge.server.plist
